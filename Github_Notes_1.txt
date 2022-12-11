@@ -83,3 +83,5 @@ A problem still exists...
 	I will want to do this at the start of every day to make sure I'm working with the most up to date files. 
 
 ***** I noticed that in all of this, none of my original files is ever updated, only my copy. Find a way to check into why this is. *****
+
+***** Update:  When I tried to push this text file into the original, it was rejected because the remote (myCopy) had changes that were not updated to the original.  It wants me to pull those changes to the original before pushing my changes. :) *****
