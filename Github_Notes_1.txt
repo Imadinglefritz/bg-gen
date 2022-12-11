@@ -1,0 +1,85 @@
+Using Github from bash to get our project online:
+
+** Source Control **
+We have one centralized location where the files reside, and can all work on them, like Google Docs, without creating conflicting changes.
+
+Go to Github.com and login
+Go to Repositories and  click New
+Enter a repository name, 
+	Make sure it's public, 
+	Check the Add a README file, and
+	Click Create Repository.
+
+From the project's main page, 
+	Click the green Code button,
+	Make sure HTTPS is highlighted, and 
+	Copy the link
+
+From Bash, 
+	Go to the folder that will house the project.
+	Type git clone {and paste the copied link}
+		A folder will be created with the project's name.
+		Inside that folder will be hidden .git folder and the README.md file.
+
+From Explorer,
+	Copy and paste the project files into the project name folder.
+
+From Bash,
+	Go into the project folder.
+		The index.html, script.js, style.css, and README.md files should be visible when you type ls.
+	Type git status
+		This will show that we have Untracked files
+	Type git add index.html
+	Type git add script.js
+	Type git add style.css
+	Type git status
+		This will show the new files that are to be committed.
+	Type git commit -m "Put a message here to update other users"
+		The -m indicates a message is to follow
+		The message is within the ""
+	Type git push
+		Pushes everything to github.
+
+From github.com
+	Refresh the project page
+	The 4 files in the project folder have been uploaded
+
+When I start working on the project...
+I open the github repository for the project
+	Click Code, and copy the project link.
+
+Open Bash,
+	Go to the folder in which I want my copy of the files to be located, and
+	Type git clone {project link}
+
+In Explorer,
+	A copy of the project folder with all the files has been downloaded.
+
+I work on the project.  
+At some point I want to save my work.
+
+In Bash,
+	Go to my copy of the repository,
+	Type git status
+		It will display which files have been modified.
+	Type git add {all changed files}, 
+		If you want to add all files,
+			Type git add .
+				The period symbolizes all files.
+	Then type git commit -m "add message here"
+	Type git push
+
+In github,
+	Update project page,
+	On right side, the files will have been updated recently.
+	Above the times, there will be a number of commits
+	By clicking on that it takes you to a page that shows all the commits.
+	Clicking on the latest one will show all the changes made to the files with this commit.
+
+A problem still exists...
+	If I made a change to the file, any other user who may also be making changes to the same file won't know it yet.
+	To get those changes, type git pull
+		This pulls the an updated copy of the files to you from github, and will update your copy to the new one.
+	I will want to do this at the start of every day to make sure I'm working with the most up to date files. 
+
+***** I noticed that in all of this, none of my original files is ever updated, only my copy. Find a way to check into why this is. *****
