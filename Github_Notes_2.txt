@@ -1,0 +1,42 @@
+Branching:  A more realistic workflow
+
+When I want to make an update to our website, I create a branch, and call it something like Little Feature.  When I'm finished, my bosses have reviewed the changes, and it's been thoroughly debugged and tested, only then will it be reintegrated into the main.
+
+The same thing happens when the whole department is working on a new version of the site.  It may go on for quite some time running parallel with the main before main is ever updated.
+
+In Bash,
+When I start the day, I go to main and git pull.
+To create a branch,
+	Type git branch {name of new branch}.
+	Type git branch to verify new branch name was created.
+	Type git checkout {new branch name}.
+
+I do my work, it gets all the approvals necessary, and I want to update main.
+
+In Bash,
+	git status
+	git add .
+	git status
+	git commit -m "changes made"
+	git push
+		If this is the first time updating a branch to the main, you will get a fatal error.  I have to tell my local git installation about the remote git repository to which my branch should be pushing.  The error message tells you how to fix it.
+	Type git push --set-upstream origin LittleFeature
+
+On github.com, a yellow box lets us know a branch change has happened.  
+	Click Compare & pull request
+	  The next page shows the changes made and provides a box for me to leave notes for my supervisors/team mates.
+	When finished, click Create pull request.
+	  The next page is the Pull requests tab.  On it approval requirements can be set.  
+	Comments can be added to specific lines under File changes.
+	  If they aren't ready to approve, they may leave comments in the field near the bottom of the page.
+	Usually the junior developers don't approve their own work, but whoever does approve it can then...
+		Click Merge pull request.
+	On the following page, 
+		Click Confirm merge
+	The next page should have a purple box displaying "Pull requset successfully merged and closed"
+		Click Delete branch
+	If we go to the Code tab, and click main, we will now see there are no other branches.
+
+In Bash,
+	Once you delete the branch, you will need to go back in and attach yourself to main again.
+	  Type 
